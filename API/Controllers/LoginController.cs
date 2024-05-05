@@ -2,11 +2,17 @@
 
 namespace API.Controllers
 {
+
+    [ApiController]
+    [Route("[controller]")]
     public class LoginController : Controller
     {
-        public int Index()
+
+        [HttpGet]
+        [Route("[action]")]
+        public string Test()
         {
-            return 1;
+            return "test response";
         }
     }
 }

@@ -18,6 +18,7 @@ namespace Persistence
 
         public ITestRepository Tests { get; }
         public IRepositoryBase<User> Users { get; }
+        public IRepositoryBase<AppContentElement> AppContentElements { get; }
 
         //static readonly object thisLock = new object();
 
@@ -27,6 +28,7 @@ namespace Persistence
             _context = context;
             Users = new RepositoryBase<User>(context);
             Tests = new TestRepository();
+            AppContentElements = new RepositoryBase<AppContentElement>(context);
         }
 
 

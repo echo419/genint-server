@@ -52,6 +52,7 @@ namespace Persistence
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<AppContentElement> AppContentElements { get; set; }
 
 
     }
