@@ -36,23 +36,23 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<LoginResponse> Index(string userName, string passwordHash)
+        public async Task<ResponseBase<ApiAppContentElementView>> Index(string userName, string passwordHash)
         {
-            LoginResponse response = new();
+            ResponseBase<ApiAppContentElementView> response = new() { };
 
             try
             {
                 await AuthenticateAsync(userName, passwordHash);
 
                 ApiAppContentElementView appContent = await _appContentElementService.GetTreeStructure();
-                response.AppContent = appContent;
+                response.Record = appContent;
 
                 response.Success = true;
             }
             catch (Exception ex)
             {
                 // success false by default
-                response.Error = ex.Message;
+                response.Message = ex.Message;
             }
 
             return response;

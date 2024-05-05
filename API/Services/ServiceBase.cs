@@ -82,7 +82,7 @@ namespace API.Services
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Exception = ex.ToString();
+                response.Message = ex.ToString();
 
                 return response;
             }
@@ -308,7 +308,7 @@ namespace API.Services
             {
                 ResponseBase<Tview> response = (ResponseBase<Tview>)Activator.CreateInstance(typeof(ResponseBase<Tview>));
                 response.Success = false;
-                response.Exception = ex.ToString();
+                response.Message = ex.ToString();
                 return response;
             }
 
@@ -341,7 +341,7 @@ namespace API.Services
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Exception = ex.ToString();
+                response.Message = ex.ToString();
 
                 return response;
             }
@@ -503,7 +503,7 @@ namespace API.Services
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Exception = ex.ToString();
+                response.Message = ex.ToString();
 
                 return response;
             }
@@ -528,7 +528,7 @@ namespace API.Services
             catch (Exception ex)
             {
                 response.Success = false;
-                response.Exception = ex.ToString();
+                response.Message = ex.ToString();
 
                 return response;
             }
