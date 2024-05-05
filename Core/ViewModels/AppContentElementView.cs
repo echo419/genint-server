@@ -10,7 +10,6 @@ namespace Core.ViewModels
     public class AppContentElementView : ViewModelBase
     {
         public int? ParentId { get; set; }
-        public virtual AppContentElement? Parent { get; set; }
 
         public string? Title { get; set; }
         public string? Text { get; set; }

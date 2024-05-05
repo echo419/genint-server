@@ -27,9 +27,7 @@ namespace Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
-
+            
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
@@ -43,7 +41,13 @@ namespace Persistence
             modelBuilder.Entity<User>().Property(b => b.AddTime).HasDefaultValueSql("getutcdate()");
             modelBuilder.Entity<AppContentElement>().Property(b => b.AddTime).HasDefaultValueSql("getutcdate()");
 
+            modelBuilder.Entity<AppContentElement>()
+            .HasOne(s => s.Parent)
+            .WithMany(m => m.Children)
+            .HasForeignKey(e => e.ParentId);
 
+
+            base.OnModelCreating(modelBuilder);
 
         }
 

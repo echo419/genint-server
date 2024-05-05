@@ -83,7 +83,7 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            AddTime = new DateTime(2024, 5, 5, 16, 47, 8, 760, DateTimeKind.Utc).AddTicks(5524),
+                            AddTime = new DateTime(2024, 5, 5, 21, 24, 0, 750, DateTimeKind.Utc).AddTicks(9954),
                             PasswordHash = "04980744f74f4ec36ad5a9d5fec8876f",
                             UserName = "genesys"
                         });
@@ -92,10 +92,15 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Core.Models.AppContentElement", b =>
                 {
                     b.HasOne("Core.Models.AppContentElement", "Parent")
-                        .WithMany()
+                        .WithMany("Children")
                         .HasForeignKey("ParentId");
 
                     b.Navigation("Parent");
+                });
+
+            modelBuilder.Entity("Core.Models.AppContentElement", b =>
+                {
+                    b.Navigation("Children");
                 });
 #pragma warning restore 612, 618
         }
