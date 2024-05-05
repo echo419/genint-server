@@ -6,7 +6,7 @@ namespace API.Messages
     {
         public bool Success { get; set; }
         public string? Error { get; set; }
-        public ApiAddContentElementView? AppContent { get; set; }
+        public ApiAppContentElementView? AppContent { get; set; }
 
     }
 }

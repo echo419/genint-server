@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.ViewModels
 {
-    internal class AppContentElementView : ViewModelBase
+    public class AppContentElementView : ViewModelBase
     {
         public int? ParentId { get; set; }
         public virtual AppContentElement? Parent { get; set; }

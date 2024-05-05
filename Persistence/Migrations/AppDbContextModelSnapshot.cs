@@ -32,7 +32,8 @@ namespace Persistence.Migrations
 
                     b.Property<DateTime?>("AddTime")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("getutcdate()");
 
                     b.Property<string>("Icon")
                         .HasColumnType("nvarchar(max)");
@@ -66,7 +67,7 @@ namespace Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("getutcdate()");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -82,8 +83,8 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            AddTime = new DateTime(2024, 5, 5, 16, 11, 6, 545, DateTimeKind.Utc).AddTicks(6976),
-                            Password = "04980744f74f4ec36ad5a9d5fec8876f",
+                            AddTime = new DateTime(2024, 5, 5, 16, 47, 8, 760, DateTimeKind.Utc).AddTicks(5524),
+                            PasswordHash = "04980744f74f4ec36ad5a9d5fec8876f",
                             UserName = "genesys"
                         });
                 });

@@ -10,6 +10,7 @@ namespace Core.Models
     {
         public int? ParentId { get; set; }
         public virtual AppContentElement? Parent { get; set; }
+        public virtual IEnumerable<AppContentElement>? Children { get; set; }
 
         public string? Title { get; set; }
         public string? Text { get; set; }

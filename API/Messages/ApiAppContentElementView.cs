@@ -2,12 +2,12 @@
 
 namespace API.Messages
 {
-    public class ApiAddContentElementView : ResponseBase
+    public class ApiAppContentElementView : ResponseBase
     {
 
         public string? Title { get; set; }
         public string? Text { get; set; }
         public string? Icon { get; set; }
-        public List<ApiAddContentElementView> Children { get; set; } = [];
+        public List<ApiAppContentElementView> Children { get; set; } = [];
     }
 }

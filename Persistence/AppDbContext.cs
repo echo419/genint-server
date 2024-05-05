@@ -35,12 +35,13 @@ namespace Persistence
                 {
                     Id = 1,
                     UserName = "genesys",
-                    Password = "04980744f74f4ec36ad5a9d5fec8876f"
+                    PasswordHash = "04980744f74f4ec36ad5a9d5fec8876f"
                 });
 
             
 
             modelBuilder.Entity<User>().Property(b => b.AddTime).HasDefaultValueSql("getutcdate()");
+            modelBuilder.Entity<AppContentElement>().Property(b => b.AddTime).HasDefaultValueSql("getutcdate()");
 
 
 
